@@ -4,7 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>JP Soluções | Luminotécnico, Automação e Segurança Eletrônica</title>
-  <meta name="description" content="JP Soluções: luminotécnico, automação residencial e CFTV/segurança eletrônica. Atendimento em Balneário Camboriú, Itajaí, Itapema, Navegantes e Camboriú. Orçamento rápido no WhatsApp." />
+
+  <meta name="description" content="JP Soluções: luminotécnico, automação residencial e CFTV/segurança eletrônica. Atendimento em Balneário Camboriú e região. Orçamento rápido no WhatsApp." />
   <meta name="theme-color" content="#0b0f17" />
 
   <!-- Open Graph -->
@@ -12,7 +13,6 @@
   <meta property="og:description" content="Luminotécnico • Automação Residencial • CFTV e Segurança Eletrônica. Atendimento em Balneário Camboriú e região. Orçamento rápido no WhatsApp." />
   <meta property="og:type" content="website" />
 
-  <!-- Font fallback (sem dependências externas) -->
   <style>
     :root{
       --bg:#070a12;
@@ -56,13 +56,35 @@
       display:flex; align-items:center; justify-content:space-between; gap:14px;
       padding:14px 0;
     }
+
     .brand{
-      display:flex; align-items:center; gap:12px; min-width: 210px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 220px;
     }
-    .brand img{
-      height:40px; width:auto;
+
+    /* LOGO integrada (não fica “selinho”) */
+    .logo-wrap{
+      width:76px;
+      height:76px;
+      border-radius:22px;
+      padding:10px;
+      background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(167,139,250,.18));
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .logo-wrap img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      border-radius:16px;
       filter: drop-shadow(0 10px 25px rgba(0,0,0,.35));
     }
+
     .brand .sub{
       color:var(--muted);
       font-size:12px;
@@ -70,6 +92,7 @@
       letter-spacing:.2px;
       margin-top:2px;
     }
+
     .menu{
       display:flex; gap:8px; flex-wrap:wrap;
       color:var(--muted);
@@ -229,7 +252,7 @@
       margin-top:1px;
     }
 
-    /* Gallery */
+    /* Gallery placeholders */
     .gallery{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
@@ -306,8 +329,8 @@
       display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
     }
 
-    /* Responsive */
-    @media (max-width: 980px){
+    /* Mobile refinements: logo central + mais “parte da página” */
+    @media (max-width: 900px){
       .hero-wrap{ grid-template-columns:1fr; }
       .grid-3{ grid-template-columns:1fr; }
       .grid-2{ grid-template-columns:1fr; }
@@ -316,7 +339,9 @@
     @media (max-width: 520px){
       .menu{ display:none; }
       .hide-mobile{ display:none; }
-      .gallery{ grid-template-columns: 1fr 1fr; }
+      .nav{ align-items:flex-start; }
+      .brand{ align-items:flex-start; }
+      .logo-wrap{ width:82px; height:82px; border-radius:24px; }
     }
   </style>
 
@@ -327,7 +352,7 @@
     "@type":"LocalBusiness",
     "name":"JP Soluções",
     "telephone":"+55 47 99943-7490",
-    "areaServed":["Balneário Camboriú","Itajaí","Itapema","Navegantes","Camboriú"],
+    "areaServed":"Balneário Camboriú e região",
     "serviceType":["Luminotécnico","Automação residencial","CFTV e segurança eletrônica"]
   }
   </script>
@@ -338,7 +363,9 @@
     <div class="container">
       <div class="nav">
         <div class="brand">
-          <img src="logo-jp.png" alt="JP Soluções" />
+          <div class="logo-wrap">
+            <img src="logo-jp.png" alt="JP Soluções" />
+          </div>
           <div>
             <div style="font-weight:950; letter-spacing:-.2px;">JP Soluções</div>
             <div class="sub">Luminotécnico • Automação • CFTV & Segurança</div>
@@ -348,16 +375,12 @@
         <nav class="menu" aria-label="Menu">
           <a href="#beneficios">Benefícios</a>
           <a href="#servicos">Serviços</a>
-          <a href="#sobre">Quem somos</a>
+          <a href="#sobre">Sobre</a>
           <a href="#trabalhos">Trabalhos</a>
           <a href="#faq">Dúvidas</a>
         </nav>
 
         <a class="btn btn-wa" id="ctaTop" href="#">
-          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <path d="M27.2 4.8A14.7 14.7 0 0 0 16 1.3C8.3 1.3 2 7.6 2 15.3c0 2.5.7 4.9 1.9 7L2 30.7l8.6-1.8a14 14 0 0 0 5.4 1.1c7.7 0 14-6.3 14-14 0-3.7-1.4-7.2-3.8-10.2Z" fill="rgba(37,211,102,.18)"/>
-            <path d="M16 3.7c-6.4 0-11.6 5.2-11.6 11.6 0 2.3.7 4.6 1.9 6.5l-1.2 4.4 4.5-1.2c1.9 1.1 4.1 1.7 6.4 1.7 6.4 0 11.6-5.2 11.6-11.6S22.4 3.7 16 3.7Zm6.6 16.1c-.3.9-1.7 1.7-2.3 1.8-.6.1-1.4.2-2.3-.1-.5-.2-1.2-.4-2.1-.8-3.6-1.6-5.9-5.5-6.1-5.7-.2-.3-1.5-2-1.5-3.8 0-1.8 1-2.7 1.3-3 .3-.3.7-.4 1-.4h.7c.2 0 .6-.1.9.7.3.8 1 2.7 1.1 2.9.1.2.1.5 0 .7-.1.2-.2.4-.4.6-.2.2-.4.4-.6.6-.2.2-.4.4-.2.8.2.4.9 1.5 1.9 2.5 1.3 1.3 2.4 1.7 2.8 1.9.4.2.6.2.8 0 .2-.2 1-1.1 1.2-1.5.2-.4.5-.3.8-.2.3.1 2.2 1 2.6 1.2.4.2.6.3.7.4.1.1.1.9-.2 1.8Z" fill="rgba(37,211,102,.95)"/>
-          </svg>
           WhatsApp
         </a>
       </div>
@@ -373,7 +396,7 @@
             <h1>Iluminação premium, casa inteligente e segurança eletrônica</h1>
             <p class="lead">
               Especialista em <b>luminotécnico</b>, <b>automação residencial</b> e <b>CFTV/segurança eletrônica</b>.
-              Atendimento em <b>Balneário Camboriú</b>, Itajaí, Itapema, Navegantes e Camboriú.
+              Atendimento em <b>Balneário Camboriú e região</b>.
             </p>
 
             <div class="chips">
@@ -384,16 +407,14 @@
             </div>
 
             <div class="hero-actions">
-              <a class="btn btn-wa" id="ctaHero" href="#">
-                <span>Solicitar orçamento</span>
-              </a>
+              <a class="btn btn-wa" id="ctaHero" href="#">Solicitar orçamento</a>
               <a class="btn" href="#servicos">Ver serviços</a>
             </div>
 
             <div style="margin-top:14px" class="cta">
               <div>
                 <strong>Orçamento rápido no WhatsApp</strong><br />
-                <span>Envie cidade/bairro + fotos/vídeo do local e eu retorno.</span>
+                <span>Envie fotos/vídeo do local e eu retorno com o orçamento.</span>
               </div>
               <a class="btn btn-primary" id="ctaBand" href="#orcamento">Quero orçamento</a>
             </div>
@@ -401,8 +422,8 @@
 
           <div class="side">
             <div class="mini">
-              <h3>📍 Região</h3>
-              <p>Balneário Camboriú • Itajaí • Itapema • Navegantes • Camboriú.</p>
+              <h3>📍 Atendimento</h3>
+              <p>Balneário Camboriú e região.</p>
             </div>
             <div class="mini">
               <h3>🧾 Como agilizar</h3>
@@ -417,12 +438,11 @@
       </div>
     </section>
 
-    <!-- Benefícios (estilo da sua página antiga) -->
     <section id="beneficios">
       <div class="container">
         <div class="title">
           <h2>Benefícios</h2>
-          <span>Mais segurança e mais resultado</span>
+          <span>Mais conforto e mais segurança</span>
         </div>
 
         <div class="grid-3">
@@ -432,14 +452,14 @@
             <p>Resposta rápida no WhatsApp e orientação clara para fechar o serviço.</p>
           </article>
           <article class="card">
-            <div class="icon">💳</div>
-            <h3>Pagamento facilitado</h3>
-            <p>Pix e cartão (conforme combinado no WhatsApp).</p>
+            <div class="icon">🧼</div>
+            <h3>Acabamento e organização</h3>
+            <p>Trabalho limpo, bem alinhado e com cuidado nos detalhes.</p>
           </article>
           <article class="card">
             <div class="icon">🛡️</div>
-            <h3>Garantia e confiança</h3>
-            <p>Execução profissional, organização e suporte pós-serviço.</p>
+            <h3>Segurança em primeiro lugar</h3>
+            <p>Soluções que evitam riscos e melhoram a confiabilidade do sistema.</p>
           </article>
         </div>
       </div>
@@ -483,7 +503,7 @@
     <section id="sobre">
       <div class="container">
         <div class="title">
-          <h2>Quem somos</h2>
+          <h2>Sobre</h2>
           <span>Profissionalismo do começo ao fim</span>
         </div>
 
@@ -491,30 +511,29 @@
           <div class="card">
             <h3>JP Soluções</h3>
             <p>
-              Atendimento em Balneário Camboriú e região, com foco em
-              luminotécnico, automação e segurança eletrônica.
-              Meu compromisso é entregar serviço organizado, seguro e com acabamento.
+              Serviços premium em luminotécnico, automação residencial e segurança eletrônica.
+              Meu compromisso é entregar um serviço organizado, seguro e com acabamento.
             </p>
           </div>
           <div class="card">
-            <h3>Onde atendemos</h3>
-            <p>Balneário Camboriú • Itajaí • Itapema • Navegantes • Camboriú.</p>
-            <p style="margin-top:10px; color: var(--muted); font-size:14px;">Se estiver em cidade próxima, me chama e eu confirmo.</p>
+            <h3>Área de atendimento</h3>
+            <p><b>Balneário Camboriú e região.</b></p>
+            <p style="margin-top:10px; color: var(--muted); font-size:14px;">
+              Me chame no WhatsApp que eu confirmo o atendimento.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Trabalhos (galeria com placeholders — você troca por fotos quando quiser) -->
     <section id="trabalhos">
       <div class="container">
         <div class="title">
           <h2>Trabalhos</h2>
-          <span>Troque os placeholders por suas fotos</span>
+          <span>Você vai trocar por suas fotos</span>
         </div>
 
         <div class="gallery">
-          <!-- Para usar fotos: substitua <div class="ph"> por <div class="ph"><img src="work1.jpg" alt="..."></div> -->
           <div class="ph"><span>Foto 1</span></div>
           <div class="ph"><span>Foto 2</span></div>
           <div class="ph"><span>Foto 3</span></div>
@@ -582,102 +601,4 @@
                 <strong>Quer mais rápido?</strong><br />
                 <span>Clique e já abre com a mensagem pronta.</span>
               </div>
-              <a class="btn btn-primary" id="ctaMsg" href="#">Abrir WhatsApp</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="container">
-        <div class="title">
-          <h2>Perguntas frequentes</h2>
-          <span>Pra você pedir orçamento com confiança</span>
-        </div>
-
-        <div class="grid-2">
-          <details open>
-            <summary>Você atende quais cidades?</summary>
-            <p>Balneário Camboriú, Itajaí, Itapema, Navegantes e Camboriú.</p>
-          </details>
-
-          <details>
-            <summary>Como o orçamento é feito?</summary>
-            <p>Você manda cidade/bairro + fotos/vídeo + o que precisa. Se necessário, combinamos visita.</p>
-          </details>
-
-          <details>
-            <summary>Tem garantia?</summary>
-            <p>Sim — execução profissional e suporte conforme o serviço combinado.</p>
-          </details>
-
-          <details>
-            <summary>Formas de pagamento?</summary>
-            <p>Pix e cartão (conforme combinado no WhatsApp).</p>
-          </details>
-        </div>
-
-        <div style="margin-top:14px" class="cta">
-          <div>
-            <strong>Pronto para pedir seu orçamento?</strong><br />
-            <span>Um clique e já abre o WhatsApp.</span>
-          </div>
-          <a class="btn btn-wa" id="ctaBottom" href="#">Pedir agora</a>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <div class="foot">
-          <div>© <span id="year"></span> JP Soluções • Balneário Camboriú e região</div>
-          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
-            <a class="btn" href="https://www.instagram.com/jp_solucs/" target="_blank" rel="noopener">Instagram @jp_solucs</a>
-            <a class="btn btn-wa" id="ctaFooter" href="#">WhatsApp</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </main>
-
-  <!-- WhatsApp Floating -->
-  <div class="wafloat" aria-label="WhatsApp">
-    <div class="bubble hide-mobile">Quer orçamento? Clique no WhatsApp 👇</div>
-    <a class="btn btn-wa" id="ctaFloat" href="#">
-      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <path d="M27.2 4.8A14.7 14.7 0 0 0 16 1.3C8.3 1.3 2 7.6 2 15.3c0 2.5.7 4.9 1.9 7L2 30.7l8.6-1.8a14 14 0 0 0 5.4 1.1c7.7 0 14-6.3 14-14 0-3.7-1.4-7.2-3.8-10.2Z" fill="rgba(37,211,102,.18)"/>
-        <path d="M16 3.7c-6.4 0-11.6 5.2-11.6 11.6 0 2.3.7 4.6 1.9 6.5l-1.2 4.4 4.5-1.2c1.9 1.1 4.1 1.7 6.4 1.7 6.4 0 11.6-5.2 11.6-11.6S22.4 3.7 16 3.7Zm6.6 16.1c-.3.9-1.7 1.7-2.3 1.8-.6.1-1.4.2-2.3-.1-.5-.2-1.2-.4-2.1-.8-3.6-1.6-5.9-5.5-6.1-5.7-.2-.3-1.5-2-1.5-3.8 0-1.8 1-2.7 1.3-3 .3-.3.7-.4 1-.4h.7c.2 0 .6-.1.9.7.3.8 1 2.7 1.1 2.9.1.2.1.5 0 .7-.1.2-.2.4-.4.6-.2.2-.4.4-.6.6-.2.2-.4.4-.2.8.2.4.9 1.5 1.9 2.5 1.3 1.3 2.4 1.7 2.8 1.9.4.2.6.2.8 0 .2-.2 1-1.1 1.2-1.5.2-.4.5-.3.8-.2.3.1 2.2 1 2.6 1.2.4.2.6.3.7.4.1.1.1.9-.2 1.8Z" fill="rgba(37,211,102,.95)"/>
-      </svg>
-      WhatsApp
-    </a>
-  </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const phone = '5547999437490';
-    const msg =
-      `Olá! Quero orçamento com a JP Soluções.%0A` +
-      `Cidade/Bairro: ____%0A` +
-      `Serviço (luminotécnico / automação residencial / CFTV e segurança): ____%0A` +
-      `Detalhes: ____%0A` +
-      `Prazo: ____%0A` +
-      `Vou enviar fotos/vídeos.`;
-
-    const waLink = `https://wa.me/${phone}?text=${msg}`;
-
-    const ids = [
-      'ctaTop','ctaHero','ctaBand','ctaServices','ctaWorks',
-      'ctaOrc','ctaMsg','ctaBottom','ctaFooter','ctaFloat'
-    ];
-    ids.forEach(id=>{
-      const el=document.getElementById(id);
-      if(!el) return;
-      el.href=waLink;
-      el.target='_blank';
-      el.rel='noopener';
-    });
-  </script>
-</body>
-</html>
+              <a class="btn 
