@@ -2,50 +2,66 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JP Soluções | Elétrica • Automação • CFTV</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JP Soluções | Elétrica • Automação • CFTV & Segurança</title>
 
-<meta name="description" content="JP Soluções - Luminotécnico, automação residencial e CFTV. Atendimento em Balneário Camboriú e região. Orçamento pelo WhatsApp.">
+<meta name="description" content="JP Soluções: luminotécnico, automação residencial e CFTV. Atendimento em Balneário Camboriú e região. Orçamento pelo WhatsApp.">
+<meta name="theme-color" content="#0b0b0f">
 
 <style>
+:root{
+  --black:#0b0b0f;
+  --gold:#d6b25e;
+  --gold2:#ffdd88;
+  --wa:#25D366;
+  --bg:#f5f7fb;
+  --text:#10131a;
+  --muted:#5a6372;
+  --radius:22px;
+  --radius2:28px;
+  --shadow:0 18px 45px rgba(10,10,15,.12);
+}
+*{box-sizing:border-box}
 body{
   margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  background:#f5f7fb;
-  color:#111;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.55;
 }
-a{text-decoration:none}
-
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
-}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:auto;padding:0 18px}
 
 /* HEADER */
 header{
-  background:linear-gradient(135deg,#000,#1a1a1a);
-  color:#fff;
+  background:
+    radial-gradient(900px 260px at 10% 40%, rgba(214,178,94,.24), transparent 55%),
+    radial-gradient(700px 220px at 90% 30%, rgba(255,221,136,.18), transparent 60%),
+    linear-gradient(180deg,#05050a,#0b0b0f);
 }
 .top{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:16px;
+  padding:18px 0;
+  gap:14px;
 }
 .brand{
   display:flex;
   align-items:center;
   gap:14px;
+  color:#fff;
 }
 .brand img{
-  width:60px;
-  height:60px;
-  border-radius:14px;
+  width:64px;
+  height:64px;
+  border-radius:16px;
 }
+.brand h3{margin:0;font-size:20px}
+.brand p{margin:2px 0 0;font-size:13px;opacity:.8}
 .btnWA{
-  background:#25D366;
-  color:#000;
+  background:linear-gradient(180deg,#25D366,#1ebe5d);
+  color:#062112;
   padding:14px 20px;
   border-radius:16px;
   font-weight:900;
@@ -53,76 +69,120 @@ header{
 
 /* HERO */
 .hero{
-  background:#111;
-  color:#fff;
   padding:30px 0;
 }
 .heroCard{
-  background:linear-gradient(180deg,#000,#1b1b1b);
-  border-radius:28px;
-  padding:26px;
+  background:
+    radial-gradient(1000px 320px at 10% 10%, rgba(214,178,94,.10), transparent 55%),
+    linear-gradient(180deg,#000,#141218);
+  color:#fff;
+  border-radius:var(--radius2);
+  padding:30px;
+  box-shadow:0 26px 60px rgba(0,0,0,.3);
 }
 .heroCard h1{
-  font-size:38px;
+  font-size:clamp(30px,5vw,44px);
   margin:0 0 10px;
 }
-.heroCard p{
-  opacity:.85;
-}
+.heroCard .sub{opacity:.85}
+.pills{display:grid;gap:10px;margin:18px 0}
 .pill{
-  background:rgba(255,255,255,.08);
+  background:rgba(255,255,255,.07);
   border-radius:16px;
   padding:14px;
-  margin-top:10px;
+  font-weight:800;
+}
+.heroActions{display:flex;gap:12px;flex-wrap:wrap}
+.btnGold{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#151018;
+  padding:14px 20px;
+  border-radius:16px;
+  font-weight:900;
+}
+.btnGhost{
+  border:1px solid rgba(255,255,255,.3);
+  padding:14px 20px;
+  border-radius:16px;
 }
 
-/* SECTION */
-.sec{
-  padding:50px 0;
+/* SECTIONS */
+.sec{padding:50px 0}
+.sec.soft{background:#fff}
+.sec h2{text-align:center;font-size:40px;margin-bottom:10px}
+.lead{text-align:center;color:var(--muted);margin-bottom:30px}
+
+/* BENEFITS */
+.benefits{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
 }
-.sec h2{
+.bcard{
+  background:#fff;
+  border-radius:22px;
+  padding:22px;
   text-align:center;
-  font-size:40px;
+  box-shadow:var(--shadow);
 }
-.lead{
-  text-align:center;
-  color:#555;
-}
+.bicon{font-size:34px;margin-bottom:10px}
 
 /* SERVICES */
-.services{
-  max-width:800px;
-  margin:auto;
-}
+.services{max-width:860px;margin:auto}
 .sitem{
   background:#fff;
   border-radius:18px;
   padding:16px;
   margin-bottom:12px;
-  font-weight:700;
+  font-weight:800;
+  box-shadow:var(--shadow);
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+.gallery img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:18px;
+  box-shadow:var(--shadow);
 }
 
 /* FOOTER */
 footer{
-  background:#000;
+  background:#0b0b0f;
   color:#fff;
-  padding:40px 0;
+  padding:40px 0 80px;
 }
-footer a{color:#fff}
+footer .row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+footer .mut{opacity:.7;font-size:14px}
 
 /* FLOAT */
 .waFloat{
   position:fixed;
-  bottom:18px;
   right:18px;
-  background:#25D366;
+  bottom:18px;
   width:64px;
   height:64px;
   border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:30px;
+  background:#25D366;
+  display:grid;
+  place-items:center;
+  font-size:28px;
+  box-shadow:0 18px 55px rgba(37,211,102,.4);
+}
+@media(max-width:900px){
+  .benefits{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -132,10 +192,10 @@ footer a{color:#fff}
 <header>
   <div class="container top">
     <div class="brand">
-      <img src="logo-jp.png">
+      <img src="logo-jp.png" alt="JP Soluções">
       <div>
-        <b>JP Soluções</b><br>
-        <small>Luminotécnico • Automação • CFTV</small>
+        <h3>JP Soluções</h3>
+        <p>Luminotécnico • Automação • CFTV & Segurança</p>
       </div>
     </div>
 
@@ -149,25 +209,38 @@ footer a{color:#fff}
   <div class="container">
     <div class="heroCard">
       <h1>Iluminação premium, casa inteligente e segurança eletrônica</h1>
-      <p>Especialista em luminotécnico, automação residencial e CFTV.</p>
+      <p class="sub">Atendimento em <b>Balneário Camboriú e região</b>.</p>
 
-      <div class="pill">💡 Luminotécnico (alto padrão)</div>
-      <div class="pill">🏠 Automação residencial (Alexa / HomeKit)</div>
-      <div class="pill">📷 CFTV e segurança eletrônica</div>
+      <div class="pills">
+        <div class="pill">💡 Luminotécnico (iluminação de alto padrão)</div>
+        <div class="pill">🏠 Automação residencial (Alexa / HomeKit)</div>
+        <div class="pill">📷 CFTV e segurança eletrônica</div>
+        <div class="pill">✅ Acabamento profissional</div>
+      </div>
 
-      <br>
-      <a class="btnWA" href="https://wa.me/5547999437490" target="_blank">
-        Solicitar orçamento
-      </a>
+      <div class="heroActions">
+        <a class="btnGold" href="https://wa.me/5547999437490" target="_blank">Solicitar orçamento</a>
+        <a class="btnGhost" href="#servicos">Ver serviços</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="sec">
+<section class="sec" id="beneficios">
+  <div class="container">
+    <h2>Benefícios</h2>
+    <div class="benefits">
+      <div class="bcard"><div class="bicon">🛠️</div>Atendimento imediato</div>
+      <div class="bcard"><div class="bicon">💳</div>Pagamento facilitado</div>
+      <div class="bcard"><div class="bicon">✅</div>Experiência comprovada</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec soft" id="servicos">
   <div class="container">
     <h2>Serviços</h2>
-    <p class="lead">Atendimento em Balneário Camboriú e região</p>
-
+    <p class="lead">Balneário Camboriú e região</p>
     <div class="services">
       <div class="sitem">Instalação elétrica residencial</div>
       <div class="sitem">Instalação elétrica predial</div>
@@ -180,16 +253,24 @@ footer a{color:#fff}
 
 <footer>
   <div class="container">
-    <b>JP Soluções</b><br>
-    📞 (47) 99943-7490<br>
-    📍 Balneário Camboriú e região<br><br>
-
-    <a href="https://wa.me/5547999437490" target="_blank">WhatsApp</a> |
-    <a href="https://www.instagram.com/jp_solucs/" target="_blank">Instagram</a>
+    <div class="row">
+      <div>
+        <b>JP Soluções</b><br>
+        <span class="mut">Qualidade, agilidade e segurança.</span>
+      </div>
+      <div>
+        📞 (47) 99943-7490<br>
+        <a href="https://wa.me/5547999437490" target="_blank">WhatsApp</a><br>
+        <a href="https://www.instagram.com/jp_solucs/" target="_blank">Instagram</a>
+      </div>
+      <div>
+        📍 Balneário Camboriú e região
+      </div>
+    </div>
   </div>
 </footer>
 
 <a class="waFloat" href="https://wa.me/5547999437490" target="_blank">💬</a>
 
 </body>
-</html>
+  </html>
