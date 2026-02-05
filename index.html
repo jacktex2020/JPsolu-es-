@@ -8,6 +8,11 @@
   <meta name="description" content="JP Soluções: instalações e manutenções elétricas, luminotécnico, automação residencial e CFTV/segurança eletrônica. Atendimento em Balneário Camboriú e região. Orçamento no WhatsApp." />
   <meta name="theme-color" content="#0b0b0f" />
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="JP Soluções | Orçamento no WhatsApp" />
+  <meta property="og:description" content="Luminotécnico • Automação residencial • CFTV & Segurança. Atendimento em Balneário Camboriú e região." />
+  <meta property="og:type" content="website" />
+
   <style>
     :root{
       --black:#0b0b0f;
@@ -39,18 +44,22 @@
 
     /* TOP BAR */
     header{
+      position: sticky;
+      top:0;
+      z-index: 50;
       background:
         radial-gradient(900px 260px at 10% 40%, rgba(214,178,94,.24), transparent 55%),
         radial-gradient(700px 220px at 90% 30%, rgba(255,221,136,.18), transparent 60%),
         linear-gradient(180deg, #05050a 0%, #0b0b0f 55%, #0b0b0f 100%);
       border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
     }
     .top{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:14px;
-      padding:18px 0;
+      padding:14px 0;
     }
     .brand{
       display:flex;
@@ -58,25 +67,32 @@
       gap:14px;
       min-width: 220px;
     }
+
+    /* LOGO MAIS INTEGRADA (sem parecer selo colado) */
     .logoWrap{
-      width:64px;
-      height:64px;
-      border-radius: 18px;
+      width:78px;
+      height:78px;
+      border-radius: 999px;
       padding:10px;
-      background: linear-gradient(135deg, rgba(214,178,94,.22), rgba(255,221,136,.12));
-      border: 1px solid rgba(255,255,255,.14);
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,221,136,.30), transparent 60%),
+        radial-gradient(circle at 70% 70%, rgba(214,178,94,.22), transparent 60%),
+        linear-gradient(135deg, rgba(255,221,136,.18), rgba(214,178,94,.10));
+      border: 1px solid rgba(255,255,255,.16);
       box-shadow: 0 18px 45px rgba(0,0,0,.35);
       display:flex;
       align-items:center;
       justify-content:center;
+      flex: 0 0 auto;
     }
     .logoWrap img{
       width:100%;
       height:100%;
       object-fit:contain;
-      border-radius: 14px;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,.35));
+      border-radius: 999px;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
     }
+
     .brand h3{
       margin:0;
       color:#fff;
@@ -109,21 +125,21 @@
       white-space:nowrap;
     }
 
-    /* HERO */
+    /* HERO com wallpaper automação */
     .hero{
       padding:22px 0 30px;
       background:
-        radial-gradient(900px 500px at 50% 0%, rgba(14,20,40,.22), transparent 65%),
-        linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(245,247,251,.95) 100%);
+        linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(245,247,251,.95) 100%),
+        url('wallpaper-automacao.jpg') center/cover no-repeat;
     }
     .heroCard{
       background:
-        radial-gradient(1000px 320px at 10% 10%, rgba(214,178,94,.10), transparent 55%),
-        radial-gradient(900px 320px at 90% 20%, rgba(14,20,40,.12), transparent 55%),
-        linear-gradient(180deg, #0b0b0f 0%, #15141b 100%);
-      border: 1px solid rgba(255,255,255,.10);
+        radial-gradient(1000px 320px at 10% 10%, rgba(214,178,94,.12), transparent 55%),
+        radial-gradient(900px 320px at 90% 20%, rgba(14,20,40,.14), transparent 55%),
+        linear-gradient(180deg, rgba(11,11,15,.90) 0%, rgba(21,20,27,.92) 100%);
+      border: 1px solid rgba(255,255,255,.12);
       border-radius: var(--radius2);
-      box-shadow: 0 26px 60px rgba(0,0,0,.28);
+      box-shadow: 0 26px 60px rgba(0,0,0,.30);
       color:#fff;
       padding:26px;
       display:grid;
@@ -147,20 +163,23 @@
       display:flex; align-items:center; gap:10px;
       padding:14px 14px;
       border-radius: 18px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
-      color: rgba(255,255,255,.86);
-      font-weight: 800;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.90);
+      font-weight: 850;
     }
     .pill span{
       width:34px; height:34px;
       border-radius: 14px;
       display:grid; place-items:center;
-      background: rgba(214,178,94,.16);
-      border: 1px solid rgba(214,178,94,.24);
+      background: rgba(214,178,94,.18);
+      border: 1px solid rgba(214,178,94,.26);
       color: var(--gold2);
       font-weight: 900;
+      flex: 0 0 auto;
     }
+    .pill small{opacity:.85; font-weight:700}
+
     .heroActions{
       display:flex; gap:12px; flex-wrap:wrap; margin-top:8px;
     }
@@ -170,8 +189,8 @@
       justify-content:center;
       padding:14px 18px;
       border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.07);
       color:#fff;
       font-weight: 900;
       cursor:pointer;
@@ -266,12 +285,13 @@
       gap:10px;
     }
     .sitem{
-      background: var(--card);
+      background: rgba(255,255,255,.92);
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 14px 16px;
       display:flex; gap:12px; align-items:center;
       box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
     }
     .dot{
       width:14px; height:14px; border-radius: 99px;
@@ -367,6 +387,29 @@
     }
     .waFloat svg{width:30px; height:30px; fill:#fff}
 
+    /* Wallpapers por seção */
+    .secWall{
+      position: relative;
+      overflow:hidden;
+    }
+    .secWall::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: var(--wall) center/cover no-repeat;
+      filter: saturate(1.05) contrast(1.02);
+      opacity: .18;
+      pointer-events:none;
+    }
+    .secWall::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(245,247,251,.95), rgba(245,247,251,.95));
+      pointer-events:none;
+    }
+    .secWall > .container{position: relative; z-index: 2;}
+
     /* Responsive */
     @media (max-width: 920px){
       .benefits{grid-template-columns:1fr}
@@ -374,6 +417,8 @@
       .about{grid-template-columns:1fr}
       .gallery{grid-template-columns:1fr}
       .sec h2{font-size: 38px}
+      .logoWrap{width:70px; height:70px}
+      .btnWA{padding:12px 14px}
     }
   </style>
 </head>
@@ -392,10 +437,7 @@
           </div>
         </div>
 
-        <!-- LINK DIRETO WHATSAPP (FUNCIONA NO CELULAR) -->
-        <a class="btnWA" id="ctaTop"
-           href="https://wa.me/5547999437490?text=Ola%21%20Quero%20orcamento%20com%20a%20JP%20Solucoes.%0ACidade%2FBairro%3A%20____%0AServico%3A%20____%0ADetalhes%3A%20____%0APrazo%3A%20____%0AVou%20enviar%20fotos%2Fvideos."
-           target="_blank" rel="noopener">ATENDIMENTO WHATSAPP</a>
+        <a class="btnWA" id="ctaTop" href="#">ATENDIMENTO WHATSAPP</a>
       </div>
     </div>
   </header>
@@ -413,12 +455,12 @@
           <div class="pills">
             <div class="pill">
               <span>💡</span>
-              Luminotécnico <small style="opacity:.85">(iluminação de alto padrão)</small>
+              Luminotécnico <small>(iluminação de alto padrão)</small>
             </div>
 
             <div class="pill">
               <span>🏠</span>
-              Automação residencial <small style="opacity:.85">(integração com Alexa / HomeKit)</small>
+              Automação residencial <small>(integração com Alexa / HomeKit)</small>
             </div>
 
             <div class="pill">
@@ -433,11 +475,7 @@
           </div>
 
           <div class="heroActions">
-            <!-- LINK DIRETO WHATSAPP -->
-            <a class="btnGold" id="ctaHero"
-               href="https://wa.me/5547999437490?text=Ola%21%20Quero%20orcamento%20com%20a%20JP%20Solucoes.%0ACidade%2FBairro%3A%20____%0AServico%3A%20____%0ADetalhes%3A%20____%0APrazo%3A%20____%0AVou%20enviar%20fotos%2Fvideos."
-               target="_blank" rel="noopener">Solicitar orçamento</a>
-
+            <a class="btnGold" id="ctaHero" href="#">Solicitar orçamento</a>
             <a class="btnGhost" href="#servicos">Ver serviços</a>
             <a class="btnGhost" href="#beneficios">Ver benefícios</a>
           </div>
@@ -486,8 +524,8 @@
       </div>
     </section>
 
-    <!-- SERVICOS -->
-    <section class="sec soft" id="servicos">
+    <!-- SERVICOS (wall luminotecnico) -->
+    <section class="sec soft secWall" id="servicos" style="--wall: url('wallpaper-luminotecnico.jpg');">
       <div class="container">
         <h2>Conheça nossos<br/>Serviços</h2>
         <p class="lead">Atendemos Balneário Camboriú e região com soluções completas em elétrica.</p>
@@ -502,10 +540,7 @@
         </div>
 
         <div style="text-align:center; margin-top:22px">
-          <!-- LINK DIRETO WHATSAPP -->
-          <a class="btnGold" id="ctaServices"
-             href="https://wa.me/5547999437490?text=Ola%21%20Quero%20orcamento%20com%20a%20JP%20Solucoes.%0ACidade%2FBairro%3A%20____%0AServico%3A%20____%0ADetalhes%3A%20____%0APrazo%3A%20____%0AVou%20enviar%20fotos%2Fvideos."
-             target="_blank" rel="noopener">FALE COM NOSSA EQUIPE</a>
+          <a class="btnGold" id="ctaServices" href="#">FALE COM NOSSA EQUIPE</a>
         </div>
       </div>
     </section>
@@ -532,38 +567,29 @@
             <p><b>Balneário Camboriú e região</b>.</p>
             <p style="margin-top:12px">Quer orçamento? Clique no WhatsApp e envie fotos/vídeo do local.</p>
             <div style="margin-top:14px">
-              <!-- LINK DIRETO WHATSAPP -->
-              <a class="miniBtn" id="ctaAbout"
-                 href="https://wa.me/5547999437490?text=Ola%21%20Quero%20orcamento%20com%20a%20JP%20Solucoes.%0ACidade%2FBairro%3A%20____%0AServico%3A%20____%0ADetalhes%3A%20____%0APrazo%3A%20____%0AVou%20enviar%20fotos%2Fvideos."
-                 target="_blank" rel="noopener">WhatsApp</a>
+              <a class="miniBtn" id="ctaAbout" href="#">WhatsApp</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TRABALHOS -->
-    <section class="sec soft" id="trabalhos">
+    <!-- TRABALHOS (wall segurança) -->
+    <section class="sec soft secWall" id="trabalhos" style="--wall: url('wallpaper-seguranca.jpg');">
       <div class="container">
         <h2>Conheça nossos trabalhos:</h2>
         <p class="lead">Veja algumas soluções entregues com excelência.</p>
 
+        <!-- Se você quiser colocar fotos reais depois, é só trocar/usar a galeria abaixo -->
         <div class="gallery">
-          <div class="img"><img src="trabalho1.jpg" alt="Trabalho 1"></div>
-          <div class="img"><img src="trabalho2.jpg" alt="Trabalho 2"></div>
-          <div class="img"><img src="trabalho3.jpg" alt="Trabalho 3"></div>
-          <div class="img"><img src="trabalho4.jpg" alt="Trabalho 4"></div>
-          <div class="img"><img src="trabalho5.jpg" alt="Trabalho 5"></div>
-          <div class="img"><img src="trabalho6.jpg" alt="Trabalho 6"></div>
-          <div class="img"><img src="trabalho7.jpg" alt="Trabalho 7"></div>
-          <div class="img"><img src="trabalho8.jpg" alt="Trabalho 8"></div>
+          <div class="img"><img src="wallpaper-automacao.jpg" alt="Automação residencial"></div>
+          <div class="img"><img src="wallpaper-luminotecnico.jpg" alt="Luminotécnico"></div>
+          <div class="img"><img src="wallpaper-seguranca.jpg" alt="CFTV e segurança"></div>
+          <div class="img"><img src="wallpaper-luminotecnico.jpg" alt="Iluminação alto padrão"></div>
         </div>
 
         <div style="text-align:center; margin-top:22px">
-          <!-- LINK DIRETO WHATSAPP -->
-          <a class="btnWA" id="ctaWorks
-             href="https://wa.me/5547999437490?text=Ola%21%20Quero%20orcamento%20com%20a%20JP%20Solucoes.%0ACidade%2FBairro%3A%20____%0AServico%3A%20____%0ADetalhes%3A%20____%0APrazo%3A%20____%0AVou%20enviar%20fotos%2Fvideos."
-             target="_blank" rel="noopener">ATENDIMENTO POR WHATSAPP</a>
+          <a class="btnWA" id="ctaWorks" href="#">ATENDIMENTO POR WHATSAPP</a>
         </div>
       </div>
     </section>
@@ -597,10 +623,7 @@
         </div>
 
         <div style="text-align:center; margin-top:22px">
-          <!-- LINK DIRETO WHATSAPP -->
-          <a class="btnGold" id="ctaFaq"
-             href="https://wa.me/5547999437490?text=Ola%21%20Quero%20orcamento%20com%20a%20JP%20Solucoes.%0ACidade%2FBairro%3A%20____%0AServico%3A%20____%0ADetalhes%3A%20____%0APrazo%3A%20____%0AVou%20enviar%20fotos%2Fvideos."
-             target="_blank" rel="noopener">FALE COM NOSSA EQUIPE</a>
+          <a class="btnGold" id="ctaFaq" href="#">FALE COM NOSSA EQUIPE</a>
         </div>
       </div>
     </section>
@@ -616,4 +639,55 @@
           <div>
             <h4>Contato</h4>
             <div class="mut">📞 (47) 99943-7490</div>
-            <div style="margin-top:10px; display:flex; gap:10px; flex-wra
+            <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="miniBtn" id="ctaFooter" href="#">WhatsApp</a>
+              <a class="miniBtn" href="https://www.instagram.com/jp_solucs/" target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </div>
+
+          <div>
+            <h4>Atendimento</h4>
+            <div class="mut">📍 Balneário Camboriú e região</div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px; color: rgba(255,255,255,.55); font-size:13px;">
+          © <span id="year"></span> JP Soluções. Todos os direitos reservados.
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- WhatsApp Floating Button -->
+  <a class="waFloat" id="ctaFloat" href="#" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.12c-.29-.15-1.71-.84-1.97-.94-.26-.1-.45-.15-.64.15-.19.29-.74.94-.9 1.13-.17.19-.33.22-.62.07-.29-.15-1.22-.45-2.32-1.44-.86-.76-1.44-1.7-1.61-1.99-.17-.29-.02-.45.13-.6.13-.13.29-.33.45-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 0.98-1 2.4 0 1.42 1.03 2.79 1.18 2.98.15.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.71-.7 1.95-1.38.24-.67.24-1.25.17-1.38-.07-.12-.26-.19-.55-.33zM16.02 3C8.84 3 3 8.82 3 16c0 2.28.6 4.5 1.75 6.45L3 29l6.74-1.77A12.93 12.93 0 0 0 16.02 29C23.2 29 29 23.18 29 16S23.2 3 16.02 3zm0 23.7c-2.09 0-4.13-.56-5.9-1.61l-.42-.25-4 1.05 1.07-3.9-.27-.44A10.6 10.6 0 0 1 5.42 16c0-5.85 4.76-10.6 10.6-10.6 5.85 0 10.6 4.75 10.6 10.6 0 5.85-4.75 10.6-10.6 10.6z"/>
+    </svg>
+  </a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // WhatsApp (CORRIGIDO)
+    const phone = '5547999437490';
+    const text =
+`Olá! Quero orçamento com a JP Soluções.
+Cidade/Bairro: ____
+Serviço (luminotécnico / automação residencial / CFTV e segurança / elétrica): ____
+Detalhes: ____
+Prazo: ____
+Vou enviar fotos/vídeos.`;
+
+    const waLink = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+    const ids = ['ctaTop','ctaHero','ctaServices','ctaAbout','ctaWorks','ctaFaq','ctaFooter','ctaFloat'];
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.setAttribute('href', waLink);
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener');
+    });
+  </script>
+</body>
+</html>
