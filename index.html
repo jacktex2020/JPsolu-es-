@@ -15,7 +15,6 @@
   <style>
     :root{
       --black:#0b0b0f;
-      --black2:#141218;
       --gold:#d6b25e;
       --gold2:#ffdd88;
       --wa:#25D366;
@@ -46,7 +45,6 @@
     a{color:inherit; text-decoration:none}
     .container{max-width:1100px; margin:0 auto; padding:0 18px}
 
-    /* Header */
     header{
       position: sticky;
       top:0;
@@ -142,7 +140,6 @@
       white-space:nowrap;
     }
 
-    /* Hero (wallpaper automação) */
     .hero{
       padding:22px 0 30px;
       background:
@@ -229,7 +226,6 @@
       box-shadow: 0 18px 45px rgba(214,178,94,.22);
     }
 
-    /* Sections */
     .sec{padding: 52px 0; background: var(--bg)}
     .sec.soft{background: var(--soft)}
     .sec h2{
@@ -247,7 +243,6 @@
       font-size: 18px;
     }
 
-    /* Cards grids */
     .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:18px}
     .grid2{display:grid; grid-template-columns: repeat(2, 1fr); gap:18px}
 
@@ -273,7 +268,6 @@
     .card h3{margin:0; font-size: 22px; letter-spacing:-.2px; color:#223042}
     .card p{margin:8px 0 0; color: var(--muted); font-size: 16px}
 
-    /* Services list */
     .services{
       max-width: 900px;
       margin: 0 auto;
@@ -297,7 +291,6 @@
     }
     .sitem b{color:#223042}
 
-    /* Steps */
     .steps{
       max-width: 980px;
       margin: 0 auto;
@@ -326,7 +319,6 @@
     }
     .step b{display:block; color:#223042; margin-bottom:4px}
 
-    /* About */
     .about{display:grid; grid-template-columns: 1fr 1fr; gap:18px; align-items:stretch}
     .box{
       background: var(--card);
@@ -338,7 +330,6 @@
     .box h3{margin:0 0 10px; font-size:20px; color:#223042}
     .box p{margin:0; color: var(--muted); font-size:16px}
 
-    /* Wallpapers por seção */
     .secWall{
       position: relative;
       overflow:hidden;
@@ -361,36 +352,6 @@
     }
     .secWall > .container{position: relative; z-index: 2;}
 
-    /* Solutions gallery */
-    .gallery{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    .img{
-      border-radius: 18px;
-      overflow:hidden;
-      border: 1px solid rgba(16,19,26,.10);
-      box-shadow: var(--shadow);
-      background: #e9edf5;
-      aspect-ratio: 4 / 3;
-      position: relative;
-    }
-    .img img{width:100%; height:100%; object-fit:cover; display:block}
-    .cap{
-      position:absolute;
-      left:10px; right:10px; bottom:10px;
-      background: rgba(11,11,15,.62);
-      border: 1px solid rgba(255,255,255,.12);
-      color:#fff;
-      padding:10px 12px;
-      border-radius: 16px;
-      font-weight: 900;
-      backdrop-filter: blur(8px);
-    }
-
-    /* FAQ */
     details{
       background: var(--card);
       border: 1px solid var(--border);
@@ -403,11 +364,10 @@
     summary{cursor:pointer; font-weight: 950; color:#223042}
     details p{margin:8px 0 0; color: var(--muted); font-size:16px}
 
-    /* Footer */
     footer{
       background: #0b0b0f;
       color: rgba(255,255,255,.86);
-      padding: 26px 0 70px;
+      padding: 26px 0 80px;
       margin-top: 20px;
     }
     footer .row{
@@ -426,7 +386,6 @@
       font-weight: 900;
     }
 
-    /* Float WhatsApp */
     .waFloat{
       position:fixed;
       right:16px;
@@ -443,13 +402,11 @@
     }
     .waFloat svg{width:30px; height:30px; fill:#fff}
 
-    /* Responsive */
     @media (max-width: 980px){
       nav{display:none}
       .grid3{grid-template-columns:1fr}
       .grid2{grid-template-columns:1fr}
       .about{grid-template-columns:1fr}
-      .gallery{grid-template-columns:1fr}
       .sec h2{font-size: 38px}
       .logoWrap{width:70px; height:70px}
       .btnWA{padding:12px 14px}
@@ -477,11 +434,11 @@
           <a href="#passos">Como funciona</a>
           <a href="#beneficios">Benefícios</a>
           <a href="#servicos">Serviços</a>
-          <a href="#solucoes">Soluções</a>
+          <a href="#sobre">Quem somos</a>
           <a href="#faq">Dúvidas</a>
         </nav>
 
-        <a class="btnWA" id="ctaTop" href="#">ATENDIMENTO WHATSAPP</a>
+        <a class="btnWA" id="ctaTop" href="#" data-wa>ATENDIMENTO WHATSAPP</a>
       </div>
     </div>
   </header>
@@ -505,7 +462,7 @@
           </div>
 
           <div class="heroActions">
-            <a class="btnGold" id="ctaHero" href="#">Solicitar orçamento</a>
+            <a class="btnGold" id="ctaHero" href="#" data-wa>Solicitar orçamento</a>
             <a class="btnGhost" href="#passos">Como funciona</a>
             <a class="btnGhost" href="#servicos">Ver serviços</a>
           </div>
@@ -513,7 +470,7 @@
       </div>
     </section>
 
-    <!-- ATIVIDADES (serviços + tipos + passos rápido) -->
+    <!-- ATIVIDADES -->
     <section class="sec" id="atividades">
       <div class="container">
         <h2>Atividades</h2>
@@ -549,12 +506,12 @@
         </div>
 
         <div style="text-align:center; margin-top:22px">
-          <a class="btnGold" id="ctaAtividades" href="#">Quero orçamento agora</a>
+          <a class="btnGold" id="ctaAtividades" href="#" data-wa>Quero orçamento agora</a>
         </div>
       </div>
     </section>
 
-    <!-- CLIENTES (tipos de clientes) -->
+    <!-- CLIENTES -->
     <section class="sec soft" id="clientes">
       <div class="container">
         <h2>Atendemos</h2>
@@ -579,12 +536,12 @@
         </div>
 
         <div style="text-align:center; margin-top:22px">
-          <a class="btnWA" id="ctaClientes" href="#">Falar no WhatsApp</a>
+          <a class="btnWA" id="ctaClientes" href="#" data-wa>Falar no WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- PASSOS (como funciona) -->
+    <!-- PASSOS -->
     <section class="sec" id="passos">
       <div class="container">
         <h2>Como funciona</h2>
@@ -622,7 +579,7 @@
         </div>
 
         <div style="text-align:center; margin-top:22px">
-          <a class="btnGold" id="ctaPassos" href="#">Pedir orçamento no WhatsApp</a>
+          <a class="btnGold" id="ctaPassos" href="#" data-wa>Pedir orçamento no WhatsApp</a>
         </div>
       </div>
     </section>
@@ -658,4 +615,24 @@
             <p>Em todos os nossos serviços e produtos.</p>
           </div>
           <div class="card center">
-          
+            <div class="icon">👷</div>
+            <h3>Equipe qualificada</h3>
+            <p>Atendimento personalizado e execução profissional.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS (wall luminotécnico) -->
+    <section class="sec soft secWall" id="servicos" style="--wall: url('wallpaper-luminotecnico.jpg');">
+      <div class="container">
+        <h2>Serviços</h2>
+        <p class="lead">Atendemos Balneário Camboriú e região com soluções completas.</p>
+
+        <div class="services">
+          <div class="sitem"><span class="dot"></span><b>Instalação e manutenção elétrica residencial</b></div>
+          <div class="sitem"><span class="dot"></span><b>Instalação e manutenção elétrica predial</b></div>
+          <div class="sitem"><span class="dot"></span><b>Manutenção elétrica em geral</b></div>
+          <div class="sitem"><span class="dot"></span><b>Projetos e execução luminotécnico</b></div>
+          <div class="sitem"><span class="dot"></span><b>Automação residencial (Alexa / HomeKit)</b></div>
+          <div class="sitem"><span class="dot"></sp
