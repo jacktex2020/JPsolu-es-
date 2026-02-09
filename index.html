@@ -1,265 +1,114 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <!-- Google tag (gtag.js) -->
+
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17934519405"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'AW-17934519405');
 </script>
+
+<!-- Conversão WhatsApp / Contato -->
+<script>
+  function gtag_report_conversion_whatsapp(url) {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17934519405/LZ39COcgPUbEOXT7OdC',
+      'value': 1.0,
+      'currency': 'BRL',
+      'event_callback': function() {
+        if (url) {
+          window.open(url, '_blank');
+        }
+      }
+    });
+    return false;
+  }
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JP Soluções | Elétrica • Automação • CFTV</title>
 
 <meta name="description" content="JP Soluções especializada em luminotécnico, automação residencial e CFTV. Atendimento em Balneário Camboriú e região. Orçamento pelo WhatsApp.">
 <meta name="theme-color" content="#0b0b0f">
-<!-- Conversão WhatsApp -->
-<script>
-function gtag_report_conversion_whatsapp() {
-  gtag('event', 'conversion', {
-    'send_to': 'AW-17934519405/XXXXXXXXXXX'
-  });
-}
-</script>
+
 <style>
 :root{
   --black:#0b0b0f;
-  --black2:#141218;
   --gold:#d6b25e;
-  --gold2:#ffdd88;
   --wa:#25D366;
   --bg:#f5f7fb;
   --text:#10131a;
-  --muted:#5a6372;
-  --radius:22px;
-  --radius2:32px;
-  --shadow:0 18px 45px rgba(10,10,15,.18);
 }
-
 *{box-sizing:border-box}
 body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
   background:var(--bg);
   color:var(--text);
-  line-height:1.6;
 }
 a{text-decoration:none;color:inherit}
 .container{max-width:1150px;margin:auto;padding:0 18px}
-
-/* HEADER */
 header{
-  background:
-    radial-gradient(900px 260px at 10% 40%, rgba(214,178,94,.25), transparent 55%),
-    radial-gradient(700px 220px at 90% 30%, rgba(255,221,136,.18), transparent 60%),
-    linear-gradient(180deg,#05050a,#0b0b0f);
+  background:linear-gradient(180deg,#05050a,#0b0b0f);
+  color:#fff;
 }
 .top{
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:20px 0;
-  gap:14px;
 }
 .brand{
   display:flex;
-  align-items:center;
   gap:14px;
-  color:#fff;
+  align-items:center;
 }
 .brand img{
-  width:68px;
-  height:68px;
-  border-radius:18px;
+  width:64px;
+  height:64px;
+  border-radius:14px;
 }
-.brand h3{margin:0;font-size:22px}
-.brand p{margin:2px 0 0;font-size:13px;opacity:.8}
-
 .btnWA{
   background:linear-gradient(180deg,#25D366,#1ebe5d);
   color:#062112;
-  padding:15px 22px;
-  border-radius:18px;
+  padding:14px 20px;
+  border-radius:16px;
   font-weight:900;
-  box-shadow:0 12px 30px rgba(37,211,102,.35);
 }
-
-/* HERO */
 .hero{
-  padding:40px 0;
+  padding:50px 0;
 }
-.heroCard{
-  background:
-    radial-gradient(1100px 380px at 10% 10%, rgba(214,178,94,.12), transparent 60%),
-    linear-gradient(180deg,#000,#141218);
-  color:#fff;
-  border-radius:var(--radius2);
-  padding:36px;
-  box-shadow:0 28px 70px rgba(0,0,0,.35);
+.hero h1{
+  font-size:42px;
+  margin-bottom:12px;
 }
-.heroCard h1{
-  font-size:clamp(32px,5vw,48px);
-  margin:0 0 12px;
+.hero p{
+  font-size:18px;
+  max-width:800px;
 }
-.heroCard .sub{
-  font-size:17px;
-  opacity:.88;
-  max-width:900px;
-}
-
-.pills{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin:26px 0;
-}
-.pill{
-  background:rgba(255,255,255,.08);
-  border-radius:18px;
-  padding:16px;
-  font-weight:800;
-}
-
-.heroActions{
+.actions{
+  margin-top:25px;
   display:flex;
   gap:14px;
   flex-wrap:wrap;
 }
 .btnGold{
-  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  background:linear-gradient(135deg,#d6b25e,#ffdd88);
   color:#151018;
   padding:15px 24px;
   border-radius:18px;
   font-weight:900;
 }
-.btnGhost{
-  border:1px solid rgba(255,255,255,.35);
-  padding:15px 24px;
-  border-radius:18px;
-  color:#fff;
-}
-
-/* SOLUÇÕES */
-.sec{padding:70px 0}
-.sec.soft{background:#fff}
-.sec h2{
-  text-align:center;
-  font-size:42px;
-  margin-bottom:12px;
-}
-.lead{
-  text-align:center;
-  color:var(--muted);
-  font-size:18px;
-  max-width:900px;
-  margin:0 auto 40px;
-}
-
-.solutions{
-  display:grid;
-  gap:28px;
-}
-.solution{
-  position:relative;
-  border-radius:28px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-}
-.solution img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-}
-.solution .overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,transparent,rgba(0,0,0,.85));
-  color:#fff;
-  padding:30px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-}
-.solution h3{
-  font-size:28px;
-  margin:0 0 8px;
-}
-.solution p{
-  font-size:16px;
-  opacity:.9;
-  max-width:800px;
-}
-
-/* BENEFÍCIOS */
-.benefits{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-.bcard{
-  background:#fff;
-  border-radius:22px;
-  padding:26px;
-  box-shadow:var(--shadow);
-  text-align:center;
-}
-.bicon{font-size:36px;margin-bottom:10px}
-
-/* SERVIÇOS */
-.services{
-  max-width:900px;
-  margin:auto;
-}
-.sitem{
-  background:#fff;
-  border-radius:18px;
-  padding:18px;
-  margin-bottom:14px;
-  font-weight:800;
-  box-shadow:var(--shadow);
-}
-
-/* PROCESSO */
-.process{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:16px;
-}
-.step{
-  background:#fff;
-  border-radius:20px;
-  padding:22px;
-  box-shadow:var(--shadow);
-  text-align:center;
-  font-weight:800;
-}
-
-/* FAQ */
-details{
-  background:#fff;
-  border-radius:18px;
-  padding:18px;
-  box-shadow:var(--shadow);
-}
-
-/* FOOTER */
+section{padding:60px 0}
 footer{
   background:#0b0b0f;
   color:#fff;
-  padding:50px 0 90px;
+  padding:40px 0 90px;
 }
-footer .row{
-  display:flex;
-  gap:30px;
-  justify-content:space-between;
-  flex-wrap:wrap;
-}
-footer .mut{opacity:.7;font-size:14px}
-
-/* FLOAT */
 .waFloat{
   position:fixed;
   right:18px;
@@ -271,14 +120,9 @@ footer .mut{opacity:.7;font-size:14px}
   display:grid;
   place-items:center;
   font-size:30px;
-  box-shadow:0 18px 55px rgba(37,211,102,.4);
-}
-
-@media(max-width:900px){
-  .benefits,.process{grid-template-columns:1fr}
-  .pills{grid-template-columns:1fr}
 }
 </style>
+
 </head>
 
 <body>
@@ -288,153 +132,47 @@ footer .mut{opacity:.7;font-size:14px}
     <div class="brand">
       <img src="logo-jp.png">
       <div>
-        <h3>JP Soluções</h3>
-        <p>Luminotécnico • Automação • CFTV & Segurança</p>
+        <b>JP Soluções</b><br>
+        <small>Elétrica • Automação • CFTV</small>
       </div>
     </div>
 
-    <a class="btnWA" href="https://wa.me/5547999437490" target="_blank">
-      Atendimento WhatsApp
+    <a class="btnWA"
+       href="https://wa.me/5547999437490"
+       onclick="return gtag_report_conversion_whatsapp(this.href);">
+      WhatsApp
     </a>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    <div class="heroCard">
-      <h1>Iluminação de alto padrão, automação inteligente e segurança eletrônica</h1>
-      <p class="sub">
-        Especialistas em soluções elétricas modernas para residências e comércios.
-        Atendimento em <b>Balneário Camboriú e região</b>.
-      </p>
+    <h1>Elétrica, automação e segurança de alto padrão</h1>
+    <p>Atendimento em Balneário Camboriú e região. Projetos profissionais, acabamento premium e suporte direto.</p>
 
-      <div class="pills">
-        <div class="pill">💡 Luminotécnico profissional</div>
-        <div class="pill">🏠 Automação residencial (Alexa / HomeKit)</div>
-        <div class="pill">📷 CFTV e segurança eletrônica</div>
-        <div class="pill">✅ Acabamento premium</div>
-      </div>
-
-      <div class="heroActions">
-        <a class="btnGold" href="https://wa.me/5547999437490" target="_blank">Solicitar orçamento</a>
-        <a class="btnGhost" href="#solucoes">Conhecer soluções</a>
-      </div>
+    <div class="actions">
+      <a class="btnGold"
+         href="https://wa.me/5547999437490"
+         onclick="return gtag_report_conversion_whatsapp(this.href);">
+        Solicitar orçamento
+      </a>
     </div>
-  </div>
-</section>
-
-<section class="sec" id="solucoes">
-  <div class="container">
-    <h2>Soluções JP Soluções</h2>
-    <p class="lead">Tecnologia, estética e segurança integradas em cada projeto.</p>
-
-    <div class="solutions">
-      <div class="solution">
-        <img src="wallpaper-luminotecnico.jpg">
-        <div class="overlay">
-          <h3>Luminotécnico</h3>
-          <p>Projetos de iluminação de alto padrão que valorizam arquitetura, conforto visual e sofisticação.</p>
-        </div>
-      </div>
-
-      <div class="solution">
-        <img src="wallpaper-automacao.jpg">
-        <div class="overlay">
-          <h3>Automação residencial</h3>
-          <p>Integração completa com Alexa e HomeKit para controle de iluminação, cenas e conforto.</p>
-        </div>
-      </div>
-
-      <div class="solution">
-        <img src="wallpaper-seguranca.jpg">
-        <div class="overlay">
-          <h3>CFTV e segurança eletrônica</h3>
-          <p>Monitoramento confiável com câmeras, organização de cabeamento e soluções inteligentes.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec soft">
-  <div class="container">
-    <h2>Por que escolher a JP Soluções</h2>
-
-    <div class="benefits">
-      <div class="bcard"><div class="bicon">🧠</div>Experiência técnica</div>
-      <div class="bcard"><div class="bicon">🛠️</div>Acabamento profissional</div>
-      <div class="bcard"><div class="bicon">⚡</div>Atendimento ágil</div>
-      <div class="bcard"><div class="bicon">🛡️</div>Segurança total</div>
-      <div class="bcard"><div class="bicon">📲</div>Atendimento direto</div>
-      <div class="bcard"><div class="bicon">🏆</div>Qualidade comprovada</div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="servicos">
-  <div class="container">
-    <h2>Serviços</h2>
-    <p class="lead">Soluções completas em elétrica e tecnologia residencial.</p>
-
-    <div class="services">
-      <div class="sitem">Instalações elétricas residenciais e prediais</div>
-      <div class="sitem">Manutenção elétrica preventiva e corretiva</div>
-      <div class="sitem">Projetos e execução luminotécnica</div>
-      <div class="sitem">Automação residencial inteligente</div>
-      <div class="sitem">CFTV, alarmes e segurança eletrônica</div>
-    </div>
-  </div>
-</section>
-
-<section class="sec soft">
-  <div class="container">
-    <h2>Como funciona o atendimento</h2>
-
-    <div class="process">
-      <div class="step">1️⃣ Contato pelo WhatsApp</div>
-      <div class="step">2️⃣ Diagnóstico</div>
-      <div class="step">3️⃣ Orçamento</div>
-      <div class="step">4️⃣ Execução</div>
-      <div class="step">5️⃣ Garantia</div>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="container">
-    <h2>Dúvidas frequentes</h2>
-
-    <details open>
-      <summary>Onde vocês atendem?</summary>
-      <p>Atendemos Balneário Camboriú e região.</p>
-    </details>
-    <details>
-      <summary>Os serviços possuem garantia?</summary>
-      <p>Sim, todos os serviços contam com garantia.</p>
-    </details>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    <div class="row">
-      <div>
-        <b>JP Soluções</b><br>
-        <span class="mut">Excelência em elétrica, automação e segurança.</span>
-      </div>
-      <div>
-        📞 (47) 99943-7490<br>
-        <a href="https://wa.me/5547999437490" target="_blank">WhatsApp</a><br>
-        <a href="https://www.instagram.com/jp_solucs/" target="_blank">Instagram</a>
-      </div>
-      <div>
-        📍 Balneário Camboriú e região
-      </div>
-    </div>
+    <b>JP Soluções</b><br><br>
+    📞 (47) 99943-7490<br>
+    📍 Balneário Camboriú e região
   </div>
 </footer>
 
-<a class="waFloat" href="https://wa.me/5547999437490" target="_blank">💬</a>
+<a class="waFloat"
+   href="https://wa.me/5547999437490"
+   onclick="return gtag_report_conversion_whatsapp(this.href);">
+💬
+</a>
 
 </body>
-                                                                            </html>
+</html>
