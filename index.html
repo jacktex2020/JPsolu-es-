@@ -7,22 +7,32 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'AW-17934519405');
+
+    /* ✅ ALTERAÇÃO NECESSÁRIA: config com linker/domains */
+    gtag('config', 'AW-17934519405', {
+      'linker': { 'domains': ['jpsoolucoeseletrica.com.br'] }
+    });
   </script>
 
   <!-- Conversão WhatsApp / Contato (Google Ads) -->
   <script>
+    /* ✅ ALTERAÇÃO NECESSÁRIA: função mais confiável (mantém abrir nova aba e faz fallback) */
     function gtag_report_conversion_whatsapp(url) {
+      var callback = function () {
+        if (typeof(url) !== 'undefined') {
+          // tenta abrir em nova aba; se o celular bloquear, abre na mesma aba
+          var win = window.open(url, '_blank', 'noopener');
+          if (!win) window.location = url;
+        }
+      };
+
       gtag('event', 'conversion', {
         'send_to': 'AW-17934519405/LZ39COcgPUbEOXT7OdC',
         'value': 1.0,
         'currency': 'BRL',
-        'event_callback': function() {
-          if (url) {
-            window.open(url, '_blank', 'noopener');
-          }
-        }
+        'event_callback': callback
       });
+
       return false; // impede o clique padrão (pra não abrir duas vezes)
     }
   </script>
@@ -466,4 +476,4 @@
    onclick="return gtag_report_conversion_whatsapp(this.href);">💬</a>
 
 </body>
-  </html>
+</html>
