@@ -8,30 +8,33 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    /* ✅ ALTERAÇÃO NECESSÁRIA: config com linker/domains */
+    /* ✅ ALTERAÇÃO NECESSÁRIA: config com linker/domains (inclui os 2 domínios que apareceram) */
     gtag('config', 'AW-17934519405', {
-      'linker': { 'domains': ['jpsoolucoeseletrica.com.br'] }
+      'linker': { 'domains': ['solucoeseletrica.com.br', 'jpsoolucoeseletrica.com.br'] }
     });
   </script>
 
   <!-- Conversão WhatsApp / Contato (Google Ads) -->
   <script>
-    /* ✅ ALTERAÇÃO NECESSÁRIA: função mais confiável (mantém abrir nova aba e faz fallback) */
+    /* ✅ ALTERAÇÃO NECESSÁRIA: versão mais confiável (abre o WhatsApp IMEDIATO e garante o disparo) */
     function gtag_report_conversion_whatsapp(url) {
-      var callback = function () {
-        if (typeof(url) !== 'undefined') {
-          // tenta abrir em nova aba; se o celular bloquear, abre na mesma aba
-          var win = window.open(url, '_blank', 'noopener');
-          if (!win) window.location = url;
-        }
+      // abre na hora (síncrono) para evitar bloqueio de popup no celular
+      var win = window.open(url, '_blank', 'noopener');
+
+      // se o navegador bloquear nova aba, abre na mesma aba
+      var navigate = function () {
+        if (!win) window.location.href = url;
       };
 
       gtag('event', 'conversion', {
         'send_to': 'AW-17934519405/LZ39COcgPUbEOXT7OdC',
         'value': 1.0,
         'currency': 'BRL',
-        'event_callback': callback
+        'event_callback': navigate
       });
+
+      // fallback caso o callback não rode (alguns navegadores bloqueiam/atrasam)
+      setTimeout(navigate, 1200);
 
       return false; // impede o clique padrão (pra não abrir duas vezes)
     }
