@@ -8,33 +8,30 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    /* ✅ ALTERAÇÃO NECESSÁRIA: config com linker/domains (inclui os 2 domínios que apareceram) */
+    /* config (mantém e evita erro de domínio) */
     gtag('config', 'AW-17934519405', {
-      'linker': { 'domains': ['solucoeseletrica.com.br', 'jpsoolucoeseletrica.com.br'] }
+      'linker': { 'domains': [location.hostname] }
     });
   </script>
 
   <!-- Conversão WhatsApp / Contato (Google Ads) -->
   <script>
-    /* ✅ ALTERAÇÃO NECESSÁRIA: versão mais confiável (abre o WhatsApp IMEDIATO e garante o disparo) */
-    function gtag_report_conversion_whatsapp(url) {
-      // abre na hora (síncrono) para evitar bloqueio de popup no celular
-      var win = window.open(url, '_blank', 'noopener');
-
-      // se o navegador bloquear nova aba, abre na mesma aba
-      var navigate = function () {
-        if (!win) window.location.href = url;
+    /* ✅ FUNÇÃO PADRÃO do Google Ads (como no e-mail) */
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) !== 'undefined') {
+          // tenta abrir em nova aba; se o celular bloquear, abre na mesma aba
+          var win = window.open(url, '_blank', 'noopener');
+          if (!win) window.location = url;
+        }
       };
 
       gtag('event', 'conversion', {
         'send_to': 'AW-17934519405/LZ39COcgPUbEOXT7OdC',
         'value': 1.0,
         'currency': 'BRL',
-        'event_callback': navigate
+        'event_callback': callback
       });
-
-      // fallback caso o callback não rode (alguns navegadores bloqueiam/atrasam)
-      setTimeout(navigate, 1200);
 
       return false; // impede o clique padrão (pra não abrir duas vezes)
     }
@@ -320,7 +317,7 @@
        href="https://wa.me/5547999437490"
        target="_blank"
        rel="noopener"
-       onclick="return gtag_report_conversion_whatsapp(this.href);">
+       onclick="return gtag_report_conversion(this.href);">
       Atendimento WhatsApp
     </a>
   </div>
@@ -347,7 +344,7 @@
            href="https://wa.me/5547999437490"
            target="_blank"
            rel="noopener"
-           onclick="return gtag_report_conversion_whatsapp(this.href);">
+           onclick="return gtag_report_conversion(this.href);">
           Solicitar orçamento
         </a>
         <a class="btnGhost" href="#solucoes">Conhecer soluções</a>
@@ -460,7 +457,7 @@
         <a href="https://wa.me/5547999437490"
            target="_blank"
            rel="noopener"
-           onclick="return gtag_report_conversion_whatsapp(this.href);">
+           onclick="return gtag_report_conversion(this.href);">
           WhatsApp
         </a><br>
         <a href="https://www.instagram.com/jp_solucs/" target="_blank" rel="noopener">Instagram</a>
@@ -476,7 +473,7 @@
    href="https://wa.me/5547999437490"
    target="_blank"
    rel="noopener"
-   onclick="return gtag_report_conversion_whatsapp(this.href);">💬</a>
+   onclick="return gtag_report_conversion(this.href);">💬</a>
 
 </body>
 </html>
